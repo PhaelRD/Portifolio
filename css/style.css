@@ -1,0 +1,771 @@
+/* Estilos Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #383838;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative; /* Para posicionamento da assinatura */
+}
+
+/* Assinatura do Criador */
+.creator-signature {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 8px;
+  color: #081820;
+  text-decoration: none;
+  padding: 5px 8px;
+  background-color: rgba(224, 248, 208, 0.7); /* Verde claro semi-transparente */
+  border-radius: 4px;
+  z-index: 1000; /* Garantir que fique acima de outros elementos */
+  transition: all 0.3s ease;
+  border: 1px solid #9bbc0f;
+}
+
+.creator-signature:hover {
+  background-color: #9bbc0f; /* Verde mais escuro ao passar o mouse */
+  transform: scale(1.05);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px; /* Espaço reduzido para o cartucho */
+}
+
+/* Estilos do Gamer Boy - Cores atualizadas para maior fidelidade */
+.gameboy {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 580px;
+  background-color: #c2c0bc; /* Cor cinza autêntica do console */
+  border-radius: 10px 10px 50px 10px;
+  padding: 20px;
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Garantir que o Gamer Boy fique acima do cartucho */
+  border: 2px solid #a8a8a8; /* Borda mais escura para dar profundidade */
+}
+
+/* Slot do cartucho */
+.cartridge-slot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px; /* Diminuído conforme solicitado */
+  height: 25px;
+  background-color: #8b8b8b;
+  border-radius: 0 0 5px 5px;
+  z-index: 3; /* Garantir que o slot fique visível */
+  border-bottom: 3px solid #777777;
+}
+
+/* Estilos do Cartucho - Diminuído horizontalmente e mais inserido no console */
+.cartridge {
+  position: absolute;
+  top: -5px; /* Posicionado mais para dentro do console */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 210px; /* Diminuído conforme solicitado */
+  height: 160px; /* Mantido altura original */
+  background-color: #8b8b8b;
+  border-radius: 5px 5px 0 0;
+  z-index: 1; /* Garantir que o cartucho fique atrás do Gamer Boy */
+  box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.2), 3px -3px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer; /* Indicar que é clicável */
+  /* *** ADDED: Perspective for 3D flip effect *** */
+  perspective: 1000px;
+}
+
+.cartridge:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px; /* Mantido altura original */
+  background-color: #6b6b6b;
+  border-radius: 2px 2px 0 0;
+}
+
+/* Common styles for both labels */
+.cartridge-label,
+.snake-cartridge-label {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 100px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  /* *** ADDED: Backface visibility and transition *** */
+  backface-visibility: hidden;
+  transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+/* Portfolio Label Specifics */
+.cartridge-label {
+  background-color: #c2c0bc; /* Cor correspondente ao Gamer Boy */
+  border: 1px solid #a8a8a8;
+  /* Initially visible */
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.cartridge-label h3 {
+  font-size: 14px;
+  color: #081820; /* Cor escura autêntica do Gamer Boy */
+  margin-bottom: 10px;
+}
+
+.cartridge-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #081820; /* Cor escura autêntica do Gamer Boy */
+  border-radius: 5px;
+  position: relative;
+}
+
+.cartridge-icon:before, .cartridge-icon:after {
+  content: '';
+  position: absolute;
+  background-color: #c2c0bc;
+}
+
+.cartridge-icon:before {
+  width: 25px;
+  height: 5px;
+  top: 22px;
+  left: 12px;
+}
+
+.cartridge-icon:after {
+  width: 5px;
+  height: 25px;
+  top: 12px;
+  left: 22px;
+}
+
+/* Snake Label Specifics */
+.snake-cartridge-label {
+  background-color: #9bbc0f; /* Verde da tela do Gamer Boy */
+  border: 1px solid #0f380f;
+  /* Initially hidden and flipped */
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+
+.snake-cartridge-label h3 {
+  font-size: 14px;
+  color: #0f380f;
+  margin-bottom: 10px;
+}
+
+.snake-cartridge-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #0f380f;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* *** ADDED: Simple Snake Icon using pseudo-elements *** */
+.snake-cartridge-icon::before, 
+.snake-cartridge-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #9bbc0f; /* Light green color */
+    border-radius: 2px;
+}
+
+/* Snake body segment 1 */
+.snake-cartridge-icon::before {
+    width: 30px; 
+    height: 8px;
+    top: 15px;
+    left: 10px;
+}
+
+/* Snake body segment 2 (vertical part) */
+.snake-cartridge-icon::after {
+    width: 8px;
+    height: 20px;
+    top: 15px;
+    left: 32px; 
+}
+
+
+/* Animação de troca de fita */
+.cartridge.snake-mode .cartridge-label {
+  opacity: 0;
+  transform: rotateY(-180deg); /* Flip out */
+}
+
+.cartridge.snake-mode .snake-cartridge-label {
+  opacity: 1;
+  transform: rotateY(0deg); /* Flip in */
+}
+
+.cartridge.eject {
+  transform: translateX(-50%) translateY(-40px);
+}
+
+/* Estilos da Tela */
+.screen-container {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.screen-border {
+  background-color: #8b8b8b;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.power-led {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.led {
+  width: 8px;
+  height: 8px;
+  background-color: #9b2256; /* Cor vermelha autêntica do LED do GameBoy */
+  border-radius: 50%;
+  margin-bottom: 5px;
+  box-shadow: 0 0 5px #9b2256;
+}
+
+.power-led span {
+  font-size: 6px;
+  color: #333;
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background-color: #e0f8d0; /* Verde claro autêntico da tela do GameBoy */
+  border: 5px solid #081820; /* Cor escura autêntica do GameBoy */
+  overflow: hidden;
+}
+
+.screen-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+  pointer-events: none;
+  z-index: 10; /* Garantir que a reflexão fique acima do conteúdo */
+}
+
+.branding {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.dot-matrix {
+  font-size: 8px;
+  color: #333;
+}
+
+/* Estilos dos Controles - Melhorada a disposição */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+
+
+/* D-pad - Novo estilo em cruz com indicadores */
+.dpad-cross {
+  position: relative;
+  width: 90px; /* Ajuste o tamanho conforme necessário */
+  height: 90px;
+  margin-left: 10px; /* Ajuste a margem conforme necessário */
+}
+
+.dpad-arm {
+  position: absolute;
+  background-color: #2c2c2c;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 4px 0 #000;
+}
+
+.dpad-arm:active, .dpad-arm.pressed {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #000;
+}
+
+.dpad-up {
+  width: 30px;
+  height: 40px; /* Braço vertical mais longo */
+  top: 0;
+  left: 30px;
+  border-radius: 5px 5px 0 0;
+  align-items: flex-start; /* Indicador no topo */
+  padding-top: 5px;
+}
+
+.dpad-down {
+  width: 30px;
+  height: 40px; /* Braço vertical mais longo */
+  bottom: 0;
+  left: 30px;
+  border-radius: 0 0 5px 5px;
+  align-items: flex-end; /* Indicador na base */
+  padding-bottom: 5px;
+}
+
+.dpad-left {
+  width: 40px; /* Braço horizontal mais longo */
+  height: 30px;
+  top: 30px;
+  left: 0;
+  border-radius: 5px 0 0 5px;
+  justify-content: flex-start; /* Indicador à esquerda */
+  padding-left: 5px;
+}
+
+.dpad-right {
+  width: 40px; /* Braço horizontal mais longo */
+  height: 30px;
+  top: 30px;
+  right: 0;
+  border-radius: 0 5px 5px 0;
+  justify-content: flex-end; /* Indicador à direita */
+  padding-right: 5px;
+}
+
+.dpad-center-pivot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #2c2c2c;
+  top: 30px;
+  left: 30px;
+  z-index: 1; /* Fica sobre os braços */
+  border-radius: 2px; /* Pequeno chanfro */
+}
+
+.dpad-indicator {
+  color: #777; /* Cor sutil para o indicador */
+  font-size: 10px;
+  line-height: 1;
+  user-select: none; /* Evitar seleção do texto do indicador */
+}
+
+/* Botões A e B - Disposição diagonal */
+.action-buttons {
+  position: relative; /* Necessário para posicionar os botões absolutamente dentro dele */
+  width: 100px; /* Ajuste a largura conforme necessário */
+  height: 80px; /* Ajuste a altura conforme necessário */
+  margin-right: 10px; /* Ajuste a margem conforme necessário */
+  transform: rotate(-25deg); /* Inclinação geral da área dos botões */
+}
+
+.action-button {
+  position: absolute;
+  width: 45px; /* Tamanho ligeiramente maior */
+  height: 45px;
+  background-color: #9b2256; /* Vermelho autêntico do GameBoy */
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px; /* Fonte ligeiramente maior */
+  font-family: 'Press Start 2P', cursive;
+  line-height: 45px; /* Centralizar texto verticalmente */
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #6b0000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-b {
+  bottom: 0;
+  left: 0;
+}
+
+.btn-a {
+  top: 0;
+  right: 0;
+}
+
+.action-button:active, .action-button.pressed {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #6b0000;
+}
+
+/* Botões Start e Select - Atualizados para maior fidelidade e ajuste de posição */
+.menu-buttons {
+  position: absolute;
+  bottom: 90px; /* Movido ainda mais para baixo */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Reduzido o espaço entre eles */
+}
+
+.menu-button {
+  width: 55px; /* Ligeiramente menor */
+  height: 18px; /* Ligeiramente menor */
+  background-color: #2c2c2c;
+  border: none;
+  border-radius: 10px;
+  color: #c2c0bc;
+  font-size: 7px; /* Reduzido para caber melhor */
+  transform: rotate(-25deg);
+  cursor: pointer;
+  box-shadow: 0 3px 0 #000; /* Sombra ajustada para altura menor */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  line-height: 18px; /* Ajustado para nova altura */
+  text-align: center;
+}
+
+.menu-button:active, .menu-button.pressed {
+  transform: translateY(3px) rotate(-25deg); /* Ajustado para nova sombra */
+  box-shadow: 0 0 0 #000;
+}
+
+/* Detalhes do GameBoy - Melhorada a disposição das saídas de áudio */
+.gameboy-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Speaker - Posicionado no canto inferior direito */
+.speaker {
+  position: absolute; /* Permite posicionamento absoluto */
+  bottom: 20px; /* Distância da borda inferior */
+  right: 20px; /* Distância da borda direita */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  width: 80px;
+  transform: rotate(-25deg); /* Inclinação para combinar com a estética */
+}
+
+.speaker-hole {
+  width: 6px;
+  height: 6px;
+  background-color: #2c2c2c;
+  border-radius: 50%;
+}
+
+/* Detalhes do GameBoy - Ajustado para evitar sobreposição */
+.gameboy-details {
+  position: absolute; /* Posicionamento absoluto para controle fino */
+  bottom: 15px; /* Distância da borda inferior do GameBoy */
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px; /* Evitar que o texto encoste nas bordas laterais */
+  pointer-events: none; /* Evitar que bloqueie interações abaixo */
+}
+
+.gameboy-brand {
+  margin-bottom: 5px; /* Reduzir espaço entre marca e texto phones */
+}
+
+.nintendo {
+  font-size: 16px;
+  color: #081820; /* Cor escura autêntica do GameBoy */
+}
+
+.tm {
+  font-size: 8px;
+  vertical-align: super;
+}
+
+.phones-text {
+  font-size: 8px;
+  color: #081820; /* Cor escura autêntica do GameBoy */
+}
+
+/* Estilos do Conteúdo do Jogo */
+#game-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden; /* Garantir que não haja barra de rolagem */
+}
+
+/* IMPORTANTE: Corrigido o problema de sobreposição de telas */
+.game-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none !important; /* Forçar esconder todas as telas */
+  padding: 10px;
+  color: #081820; /* Cor escura autêntica do GameBoy */
+  z-index: 1;
+  overflow: hidden; /* Mantém o container principal sem overflow */
+}
+
+.game-screen.active {
+  display: flex !important; /* Forçar exibição apenas da tela ativa */
+  flex-direction: column;
+}
+
+/* Tela de Boot */
+#boot-screen.active {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.nintendo-logo {
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* Tela de Título */
+#title-screen.active {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Tela de Menu com ícones pixel art */
+#menu-screen.active {
+  display: flex !important;
+  flex-direction: column;
+  padding: 20px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+  max-width: 160px;
+}
+
+.menu-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-icon-item.selected .icon-box {
+  border: 2px solid #081820;
+  background-color: #9bbc0f;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: #e0f8d0;
+  border: 2px solid #9bbc0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.pixel-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+
+.icon-label {
+  font-size: 6px;
+  text-align: center;
+}
+
+/* Ícones em pixel art */
+.about-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="12" y="6" width="8" height="8" fill="%23081820"/><rect x="8" y="14" width="16" height="4" fill="%23081820"/><rect x="12" y="18" width="8" height="8" fill="%23081820"/></svg>');
+}
+
+.projects-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="6" y="8" width="20" height="4" fill="%23081820"/><rect x="6" y="14" width="20" height="4" fill="%23081820"/><rect x="6" y="20" width="20" height="4" fill="%23081820"/></svg>');
+}
+
+.skills-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="8" y="8" width="4" height="16" fill="%23081820"/><rect x="14" y="12" width="4" height="12" fill="%23081820"/><rect x="20" y="6" width="4" height="18" fill="%23081820"/></svg>');
+}
+
+.contact-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="6" y="10" width="20" height="12" fill="%23081820"/><path d="M6,10 L16,16 L26,10" stroke="%23081820" stroke-width="2" fill="none"/></svg>');
+}
+
+/* Telas de Conteúdo */
+#about-screen.active, 
+#projects-screen.active, 
+#skills-screen.active, 
+#contact-screen.active {
+  display: flex !important;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.content-area {
+  flex: 1;
+  overflow-y: auto; /* Alterado para auto para permitir barra de rolagem vertical quando necessário */
+  overflow-x: hidden; /* Mantém o conteúdo sem rolagem horizontal */
+  font-size: 8px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  max-height: 130px; /* Altura máxima para garantir que a barra de rolagem apareça quando necessário */
+  scrollbar-width: thin; /* Para Firefox */
+}
+
+.footer-hint {
+  font-size: 6px;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Links clicáveis */
+.contact-link {
+  color: #081820; /* Cor escura autêntica do GameBoy */
+  text-decoration: none;
+  position: relative;
+}
+
+.contact-link:hover {
+  color: #484686; /* Cor azul autêntica do GameBoy */
+}
+
+.contact-link:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #081820;
+}
+
+/* Projetos */
+.project-item {
+  margin-bottom: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.project-item.selected {
+  background-color: #081820; /* Cor escura autêntica do GameBoy */
+  color: #e0f8d0; /* Cor verde clara autêntica do GameBoy */
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 3px;
+  color: #081820; /* Cor escura autêntica do GameBoy */
+  text-decoration: none;
+}
+
+.project-link:hover {
+  color: #484686; /* Cor azul autêntica do GameBoy */
+}
+
+.skills-list {
+  list-style-type: none;
+}
+
+.skills-list li {
+  padding: 3px 0;
+}
+
+/* Páginas de projeto individuais */
+.project-detail-screen {
+  display: none !important;
+}
+
+.project-detail-screen.active {
+  display: flex !important;
+  flex-direction: column;
+}
+
+/* Snake Game Screens */
+#snake-start-screen.active,
+#snake-over-screen.active {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#snake-game-screen.active {
+    display: block !important; /* Canvas needs block display */
+    padding: 0; /* Remove padding for canvas */
+}
+
+#snake-canvas {
+    display: block; /* Ensure canvas takes up space */
+    width: 100%;
+    height: 100%;
+}
+

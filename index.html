@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <title>Portfólio Gamer Boy Phael</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Console Gamer Boy -->
+        <div class="gameboy">
+            <!-- Slot do cartucho -->
+            <div class="cartridge-slot"></div>
+            
+            <!-- Tela do Gamer Boy -->
+            <div class="screen-container">
+                <div class="screen-border">
+                    <div class="power-led">
+                        <div class="led"></div>
+                        <span>BATTERY</span>
+                    </div>
+                    <div class="screen">
+                        <div id="game-content">
+                            <!-- Conteúdo do jogo será renderizado aqui -->
+                            <div id="boot-screen" class="game-screen active">
+                                <div class="nintendo-logo">NINTONDO</div>
+                            </div>
+                            <div id="title-screen" class="game-screen">
+                                <h1 class="title">MEU PORTFOLIO</h1>
+                                <p class="blink">PRESS START</p>
+                            </div>
+                            <div id="menu-screen" class="game-screen">
+                                <!-- Menu com ícones será gerado via JavaScript -->
+                            </div>
+                            <div id="about-screen" class="game-screen">
+                                <!-- Conteúdo gerado via JavaScript -->
+                            </div>
+                            <div id="projects-screen" class="game-screen">
+                                <!-- Conteúdo gerado via JavaScript -->
+                            </div>
+                            
+                            <!-- Páginas de detalhes dos projetos (geradas via JavaScript) -->
+                            <div id="project-details-container">
+                                <!-- As telas de detalhes dos projetos serão inseridas aqui -->
+                            </div>
+                            
+                            <div id="skills-screen" class="game-screen">
+                                <!-- Conteúdo gerado via JavaScript -->
+                            </div>
+                            <div id="contact-screen" class="game-screen">
+                                <!-- Conteúdo gerado via JavaScript -->
+                            </div>
+                            <!-- Novas telas para o jogo Snake -->
+                            <div id="snake-start-screen" class="game-screen">
+                                <!-- Conteúdo gerado via JavaScript -->
+                            </div>
+                            <div id="snake-game-screen" class="game-screen">
+                                <!-- Canvas ou divs para o jogo Snake -->
+                                <canvas id="snake-canvas"></canvas> 
+                            </div>
+                            <div id="snake-over-screen" class="game-screen">
+                                <!-- Conteúdo gerado via JavaScript -->
+                            </div>
+                        </div>
+                        <div class="screen-reflection"></div>
+                    </div>
+                    <div class="branding">
+                        <span class="dot-matrix">DOT MATRIX WITH STEREO SOUND</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controles do Gamer Boy -->
+            <div class="controls">
+                <!-- D-pad -->
+                <div class="dpad-cross">
+                    <div class="dpad-center-pivot"></div>
+                    <button id="btn-up" class="dpad-arm dpad-up">
+                        <span class="dpad-indicator">▲</span>
+                    </button>
+                    <button id="btn-right" class="dpad-arm dpad-right">
+                        <span class="dpad-indicator">►</span>
+                    </button>
+                    <button id="btn-down" class="dpad-arm dpad-down">
+                        <span class="dpad-indicator">▼</span>
+                    </button>
+                    <button id="btn-left" class="dpad-arm dpad-left">
+                        <span class="dpad-indicator">◄</span>
+                    </button>
+                </div>
+
+                
+                <!-- Botões A e B -->
+                <div class="action-buttons">
+                    <button id="btn-b" class="action-button btn-b">B</button>
+                    <button id="btn-a" class="action-button btn-a">A</button>
+                </div>
+                
+                <!-- Botões Start e Select -->
+                <div class="menu-buttons">
+                    <button id="btn-select" class="menu-button btn-select">SELECT</button>
+                    <button id="btn-start" class="menu-button btn-start">START</button>
+                </div>
+            </div>
+            
+            <!-- Speaker -->
+            <div class="speaker">
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+            </div>
+
+            <!-- Detalhes do Gamer Boy -->
+            <div class="gameboy-details">
+
+                <div class="gameboy-brand">
+                    <span class="nintendo">GAMER BOY</span>
+                    <span class="tm">™</span>
+                </div>
+                <div class="phones-text">PHONES</div>
+            </div>
+        </div>
+        
+        <!-- Cartucho do Gamer Boy -->
+        <div class="cartridge">
+            <div class="cartridge-label">
+                <h3>PORTFOLIO</h3>
+                <div class="cartridge-icon"></div>
+            </div>
+            <!-- Etiqueta para o jogo Snake (inicialmente oculta) -->
+            <div class="snake-cartridge-label">
+                <h3>SNAKE</h3>
+                <div class="snake-cartridge-icon">
+                    <!-- Ícone pode ser gerado com divs/css ou um svg -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assinatura do Criador -->
+    <a href="https://www.instagram.com/phael.r.d/" target="_blank" class="creator-signature" id="creator-signature">@phael.r.d</a>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
