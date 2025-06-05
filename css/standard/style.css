@@ -43,15 +43,6 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-#mode-switch-button {
-  position: fixed !important;
-  bottom: 20px !important;
-  left: 20px !important;
-  top: auto !important;   /* Anula top */
-  right: auto !important; /* Anula right */
-}
-
-
 #mode-switch-button:hover {
   transform: scale(1.1);
 }
