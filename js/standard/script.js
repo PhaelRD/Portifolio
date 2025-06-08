@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Android Studio",
                 "Java",
                 "Python",
+                "Flask",
                 "Firebase",
                 "SQL"
             ]
@@ -85,7 +86,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 links: [
                     { text: "GitHub", url: "https://github.com/PhaelRD/Rota-Escolar-Flutter-Readme" }
                 ]
-            }
+            },
+            {
+             id: "projeto5",
+             title: "Bob",
+             description: "Chat de Inteligencia Artificial.",
+             detailTitle: "BOB",
+             detailContent: "Bob é um assistente virtual feito com Flask (backend) e JavaScript (frontend) que entende comandos de texto e voz, responde com texto e fala suas respostas. Ele pode salvar, listar e excluir lembretes, informar data e hora, além de fazer pesquisas no Google.",
+             image: "img/standard/project5.jpg",
+             tools: ["Python", "Flask", "Html", "Javascript"],
+             links: [
+                 { text: "GitHub", url: "https://github.com/PhaelRD/Bob" },
+                 { text: "Ver Projeto Online", url: "https://phael.pythonanywhere.com/" }
+             ]
+         }
         ]
     };
 

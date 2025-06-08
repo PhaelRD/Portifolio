@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Press Start 2P', cursive;
-  background-color: #383838;
+  background-color: #081820;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -770,10 +770,6 @@ h2 {
 }
 
 
-
-
-'''/* --- Media Queries para Responsividade --- */
-
 /* Telas menores (ex: smartphones em modo retrato) */
 @media (max-width: 480px) {
   body {
@@ -889,12 +885,6 @@ h2 {
     /* Original layout (absolute positioning) is maintained */
   }
 
-  .menu-buttons {
-     /* Original layout (absolute positioning) is maintained */
-     /* Keep smaller gap? Let'''s revert gap too for consistency */
-     /* gap: 10px; */ /* Reverted */
-  }
-
   .menu-button { /* Keep size adjustments */
     width: 50px;
     height: 16px;
@@ -989,4 +979,3 @@ h2 {
 
   /* Poderia adicionar mais ajustes específicos para esta faixa se necessário */
 }
-'''
