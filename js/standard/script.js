@@ -99,6 +99,19 @@ document.addEventListener('DOMContentLoaded', function() {
                  { text: "GitHub", url: "https://github.com/PhaelRD/Bob" },
                  { text: "Ver Projeto Online", url: "https://phael.pythonanywhere.com/" }
              ]
+         },
+         {
+             id: "projeto6",
+             title: "Loja De Presentes",
+             description: "E-commerce completo de loja de presentes.",
+             detailTitle: "LOJA DE PRESENTES",
+             detailContent: "Este é um e-commerce completo de loja de presentes desenvolvido com tecnologias modernas. O site permite que clientes naveguem por produtos, adicionem itens ao carrinho, façam login com Google, e realizem compras reais através do Stripe.",
+             image: "img/standard/project6.jpg",
+             tools: ["Javascript ", "Firebase", "Stripe"],
+             links: [
+                 { text: "GitHub", url: "https://github.com/PhaelRD/LojaDePresentes" },
+                 { text: "Ver Projeto Online", url: "https://exemplo.com" }
+             ]
          }
         ]
     };

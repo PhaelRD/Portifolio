@@ -80,18 +80,30 @@ const portfolioConfig = {
                  { text: "GitHub", url: "https://github.com/PhaelRD/Rota-Escolar-Flutter-Readme" }
              ]
          },
-         {
-             id: "projeto5",
-             title: "Bob",
-             description: "Chat de Inteligencia Artificial.",
-             detailTitle: "BOB",
-             detailContent: "Bob é um assistente virtual feito com Flask (backend) e JavaScript (frontend) que entende comandos de texto e voz, responde com texto e fala suas respostas. Ele pode salvar, listar e excluir lembretes, informar data e hora, além de fazer pesquisas no Google.",
-             tools: ["Python", "Flask", "Html", "Javascript"],
-             links: [
-                 { text: "GitHub", url: "https://github.com/PhaelRD/Bob" },
-                 { text: "Ver Projeto Online", url: "https://phael.pythonanywhere.com/" }
-             ]
-         }
+        {
+            id: "projeto5",
+            title: "Bob",
+            description: "Chat de Inteligencia Artificial.",
+            detailTitle: "BOB",
+            detailContent: "Bob é um assistente virtual feito com Flask (backend) e JavaScript (frontend) que entende comandos de texto e voz, responde com texto e fala suas respostas. Ele pode salvar, listar e excluir lembretes, informar data e hora, além de fazer pesquisas no Google.",
+            tools: ["Python", "Flask", "Html", "Javascript"],
+            links: [
+                { text: "GitHub", url: "https://github.com/PhaelRD/Bob" },
+                { text: "Ver Projeto Online", url: "https://phael.pythonanywhere.com/" }
+            ]
+        },
+        {
+            id: "projeto6",
+            title: "Loja De Presentes",
+            description: "E-commerce completo de loja de presentes.",
+            detailTitle: "LOJA DE PRESENTES",
+            detailContent: "Este é um e-commerce completo de loja de presentes desenvolvido com tecnologias modernas. O site permite que clientes naveguem por produtos, adicionem itens ao carrinho, façam login com Google, e realizem compras reais através do Stripe.",
+            tools: ["Javascript ", "Firebase", "Stripe"],
+            links: [
+                { text: "GitHub", url: "https://github.com/PhaelRD/LojaDePresentes" },
+                { text: "Ver Projeto Online", url: "https://lojadepresentes-22206.web.app" }
+            ]
+        }
     ]
 };
 
