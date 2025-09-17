@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
              tools: ["Javascript ", "Firebase", "Stripe"],
              links: [
                  { text: "GitHub", url: "https://github.com/PhaelRD/LojaDePresentes" },
-                 { text: "Ver Projeto Online", url: "https://exemplo.com" }
+                 { text: "Ver Projeto Online", url: "https://lojadepresentes-22206.web.app" }
              ]
          }
         ]
