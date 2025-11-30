@@ -138,28 +138,3 @@ Você pode usar o mouse para clicar nos botões do console ou o teclado:
 │       └── script.js       # Lógica específica do Modo Moderno
 └── img/                    # Imagens de perfil, projetos e favicon
 ```
-
----
-
-## ✅ Observações e Boas Práticas
-
-* Separe a lógica do jogo (Snake) em um módulo próprio para facilitar manutenção.
-* Use `requestAnimationFrame` para o loop do jogo e evite `setInterval` quando possível.
-* Exporte o `portfolioConfig` como JSON se quiser gerar o portfólio dinamicamente a partir de uma API.
-* Teste a versão mobile do Modo Standard e ajuste breakpoints para legibilidade.
-
----
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Raphael Rodrigues Dias**
-
----
-
-Se quiser, posso também:
-
-* Gerar um `README.md` pronto para o GitHub com badges e instruções de deploy;
-* Gerar arquivos `.html` ou uma versão pronta para publicar (ZIP);
-* Ajudar a adaptar o portfólio para deploy em GitHub Pages ou Netlify.
-
-Escolha uma opção e eu continuação com a próxima etapa.
