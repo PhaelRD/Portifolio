@@ -2,6 +2,8 @@
 
 Um portfólio pessoal único que oferece duas experiências distintas de navegação: uma interface nostálgica e interativa baseada em um **Game Boy Color** (com som e cartuchos) e uma interface **Standard (Moderna)**, responsiva e profissional.
 
+https://phaelrd.github.io/Portifolio/
+
 ---
 
 ## ✨ Funcionalidades
