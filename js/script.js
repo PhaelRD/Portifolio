@@ -103,6 +103,17 @@ const portfolioConfig = {
                 { text: "GitHub", url: "https://github.com/PhaelRD/LojaDePresentes" },
                 { text: "Ver Projeto Online", url: "https://lojadepresentes-22206.web.app" }
             ]
+        },
+        {
+            id: "projeto7",
+            title: "Youtube Bot",
+            description: "Conecta o chat de uma live do YouTube ao teu teclado e rato.",
+            detailTitle: "YOUTUBE BOT",
+            detailContent: "conecta o chat de uma live do YouTube ao teu teclado e rato, permitindo que os teus espectadores controlem o jogo no teu PC em tempo real.",
+            tools: ["Javascript ", "NodeJS"],
+            links: [
+                { text: "GitHub", url: "https://github.com/PhaelRD/YouTube-Plays-Bot" }
+            ]
         }
     ]
 };
