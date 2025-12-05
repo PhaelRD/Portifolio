@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             image: "img/standard/project7.jpg",
             tools: ["Javascript ", "NodeJS" ],
             links: [
-                { text: "GitHub", url: "https://github.com/PaelRD/YouTube-Plays-Bot" }
+                { text: "GitHub", url: "https://github.com/PhaelRD/YouTube-Plays-Bot" }
             ]
         }
         ]
